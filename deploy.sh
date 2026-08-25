@@ -6,6 +6,5 @@
 
   cd "$HOME/NetflixMovieCatalog"
 
-  pkill -f '[p]ython.*app.py' || true
-
-  nohup ./venv/bin/python app.py > output.log 2>&1 < /dev/null &
+  sudo systemctl restart netflix.service
+  sudo systemctl is-active --quiet netflix.service
