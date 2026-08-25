@@ -5,7 +5,7 @@
   set -e -o pipefail
 
   git -C "$APP_DIR" fetch origin main
-  git -C "$APP_DIR" reset --hard origin/mai
+  git -C "$APP_DIR" reset --hard origin/main
 
   cd "$HOME/NetflixMovieCatalog"
 
