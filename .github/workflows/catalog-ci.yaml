@@ -23,8 +23,8 @@
           with:
             python-version: "3.12"
 
-        - name: Install Dependencies
-	  run: |
+        - name: Install Dependencie
+          run: |
             python -m pip install --upgrade pip
 	    python -m pip install -r requirement.txt
 
