@@ -17,3 +17,16 @@
 
         - name: Run a Script
           run: echo "Code pushed or PR opened. Run build checks."
+        
+        - name: Set Up Python
+          uses: action/setup-python@v5
+          with:
+            python-version: "3.12"
+
+        - name: Install Dependencies
+	  run: |
+            python -m pip install --upgrade pip
+	    python -m pip install -r requirement.txt
+
+	- name: Validate python source 
+	  run: python -m comlileall app.py
