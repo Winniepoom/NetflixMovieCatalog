@@ -1,4 +1,5 @@
 name: Netflix Catalog CI
+
 on:
   pull_request:
     branches:
