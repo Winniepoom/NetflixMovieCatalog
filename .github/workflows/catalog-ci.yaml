@@ -1,22 +1,19 @@
-name: Netflix Catalog PR CI
-
+name: Netflix Catalog CI
 on:
   pull_request:
     branches:
       - main
-
-name: Push to Main Action
-
-on:
-  push:
-    - main
+   
+   push:
+     branches:
+       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    step:
-      - name: Chekcout code
+    steps:
+      - name: Checkout Code
         uses: action/checkout@v4
 
-      - name: Run a Script 
-        run: echo "Code psuh to main. Running Builds"
+      - name: Run a Script
+        run: echo "Code pushed or PR opened. Run builds checks"
