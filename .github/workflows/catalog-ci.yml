@@ -56,6 +56,13 @@
         - name: Checkout Code
           uses: actions/checkout@v4
 
+        - name: Inspect OIDC Claims
+          shell: bash
+          run: |
+            python3 -c 'import base64,json,os,urllib.request; u=os.environ["ACTIONS_ID_TOKEN_REQUEST_URL"]+"&audience=sts.amazonaws.com";
+            r=urllib.request.Request(u,headers={"Authorization":"Bearer "+os.environ["ACTIONS_ID_TOKEN_REQUEST_TOKEN"]}); t=json.load(urllib.request.urlopen(r))["value"];
+            p=t.split(".")[1]; p+="="*(-len(p)%4); c=json.loads(base64.urlsafe_b64decode(p)); print(json.dumps({k:c.get(k) for k in ("aud","sub","repository","ref")},indent=2))'
+
         - name: Configure AWS Credentials with OIDC
           uses: aws-actions/configure-aws-credentials@v6.2.3
           with:
