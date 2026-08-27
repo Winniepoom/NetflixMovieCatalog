@@ -12,8 +12,8 @@
     contents: read
 
   env:
-    AWS_REGION: ${{ vars.AWS_REGION }}
-    ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
+    AWS_REGION: ap-southeast-1
+    ECR_REPOSITORY: devops-netflix/movie-catalog
 
   jobs:
     build:
