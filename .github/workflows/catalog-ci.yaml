@@ -1,20 +1,19 @@
-name: Netflix Catalog CI
+  name: Netflix Catalog CI
 
-on:
-  pull_request:
-    branches:
-      - main
-   
-   push:
-     branches:
-       - main
+  on:
+    pull_request:
+      branches:
+        - main
+    push:
+      branches:
+        - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: action/checkout@v4
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Code
+          uses: actions/checkout@v4
 
-      - name: Run a Script
-        run: echo "Code pushed or PR opened. Run builds checks"
+        - name: Run a Script
+          run: echo "Code pushed or PR opened. Run build checks."
