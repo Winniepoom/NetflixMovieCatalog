@@ -32,4 +32,4 @@
           run: python -m compileall app.py
 	
 	- name: Build docker image
-	  run: docker build -t netflix-movie-catalog:ci-${{github.sha}} .
+          run: docker build -t netflix-movie-catalog:ci-${{ github.sha }} .
